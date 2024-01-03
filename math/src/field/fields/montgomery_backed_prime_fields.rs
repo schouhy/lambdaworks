@@ -222,15 +222,17 @@ where
                 if v <= u {
                     u = u - v;
                     if b < c {
-                        b = b + modulus;
+                        b = b + (modulus - c);
+                    } else {
+                        b = b - c;
                     }
-                    b = b - c;
                 } else {
                     v = v - u;
                     if c < b {
-                        c = c + modulus;
+                        c = c + (modulus - b);
+                    } else {
+                        c = c - b;
                     }
-                    c = c - b;
                 }
             }
 
